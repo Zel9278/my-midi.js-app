@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="./midi/style.css">
+    <script src="./src/modules/jquery-3.4.1.min.js" type="text/javascript"></script>
+    
+    <script src="./src/modules/inc/shim/Base64.js" type="text/javascript"></script>
+    <script src="./src/modules/inc/shim/Base64binary.js" type="text/javascript"></script>
+    <script src="./src/modules/inc/shim/WebAudioAPI.js" type="text/javascript"></script>
+	  <script src="./src/modules/inc/shim/WebMIDIAPI.js" type="text/javascript"></script>
+    
+    <script src="./src/modules/inc/jasmid/stream.js"></script>
+    <script src="./src/modules/inc/jasmid/midifile.js"></script>
+    <script src="./src/modules/inc/jasmid/replayer.js"></script>
+    
+    <script src="./src/modules/midi/audioDetect.js" type="text/javascript"></script>
+    <script src="./src/modules/midi/gm.js" type="text/javascript"></script>
+    <script src="./src/modules/midi/loader.js" type="text/javascript"></script>
+    <script src="./src/modules/midi/plugin.audiotag.js" type="text/javascript"></script>
+    <script src="./src/modules/midi/plugin.webaudio.js" type="text/javascript"></script>
+    <script src="./src/modules/midi/plugin.webmidi.js" type="text/javascript"></script>
+    <script src="./src/modules/midi/player.js" type="text/javascript"></script>
+    <script src="./src/modules/midi/synesthesia.js" type="text/javascript"></script>
+    
+    <script src="./src/modules/util/dom_request_xhr.js" type="text/javascript"></script>
+    <script src="./src/modules/util/dom_request_script.js" type="text/javascript"></script>
+    
+    <script src="./src/modules/inc/timer.js" type="text/javascript"></script>
+    <script src="./src/modules/inc/colorspace.js" type="text/javascript"></script>
+    <script src="./src/modules/inc/event.js" type="text/javascript"></script>
+    
+    <script src="./midi/script.js" type="text/javascript"></script>
+    <script src="./src/render/piano.js" type="text/javascript"></script>
+    <script src="./src/render/pianoroll.js" type="text/javascript"></script>
+  </head>
+  
+  <body>
+    <div class="main">
+      <p>FPS: <output id="FPS"></output></p>
+      <p>NOTES: <output id="notes">000000</output></p>
+      <p>NOTES PER SECOND: <output id="nps">000000</output></p>
+      <div id="midiHandling">
+        <button onclick="play()">Play</button>
+        <button onclick="stop()">Stop</button>
+      </div>
+      <div id="renderHandling">
+        <button onclick="pushKeys = []">reset array</button>
+      </div>
+      <div id="renders">
+        <div id="pianoroll"><canvas id="canvas"></canvas></div>
+        <div id="keyboard"><div id="keys"></div></div>
+      </div>
+    </div>
+  </body>
+</html>
